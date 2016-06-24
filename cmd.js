@@ -237,7 +237,7 @@ function fixPackageJSON (modules, file, overwrite) {
     })
 
     if (!deepEqual(orgBrowser, depBrowser)) {
-      pkgJson.browser = pkgJson['react-native'] = depBrowser
+      pkgJson['react-native'] = depBrowser
       delete pkgJson.browserify
       fs.writeFile(file, JSON.stringify(pkgJson, null, 2), rethrow)
     }
